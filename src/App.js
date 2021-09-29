@@ -1,25 +1,60 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Navbar from './Navbar';
+import Routes from './Routes';
+import bud from './images/bud.jpg';
+import bart from './images/bart.jpg';
+import francisco from './images/francisco.jpg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  static defaultProps = {
+    dogs: [
+      {
+        name: "Bud",
+        age: 8,
+        src: bud,
+        facts: [
+          "Pretty chill",
+          "There is no such thing as over cuddling for him",
+          "Will lick you in the face"
+        ]
+      },
+      {
+        name: "Bart",
+        age: 10,
+        src: bart,
+        facts: [
+          "Annoying",
+          "Pick up fights he can not handle",
+          "Jealous and lovingly"
+        ]
+      },
+      {
+        name: "Francisco",
+        age: '??',
+        src: francisco,
+        facts: [
+          "Sleep",
+          "Eat",
+          "Repeat"
+        ]
+      }
+    ]
+  }
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
+  render() {
+    return (
+      <div>
+        <Navbar dogs={this.props.dogs} />
+        <div className="container">
+          <Routes dogs={this.props.dogs} />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
