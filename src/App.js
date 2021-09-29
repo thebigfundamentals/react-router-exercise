@@ -4,6 +4,7 @@ import Routes from './Routes';
 import bud from './images/bud.jpg';
 import bart from './images/bart.jpg';
 import francisco from './images/francisco.jpg';
+import godard from './images/godard.jpg';
 import './App.css';
 
 class App extends Component {
@@ -37,6 +38,16 @@ class App extends Component {
           "Sleep",
           "Eat",
           "Repeat"
+        ]
+      },
+      {
+        name: "Godard",
+        age: 'A lot',
+        src: godard,
+        facts: [
+          "Can't sing, but he will try",
+          "Will bite your fingers",
+          "Will poop on your stuff"
         ]
       }
     ]
